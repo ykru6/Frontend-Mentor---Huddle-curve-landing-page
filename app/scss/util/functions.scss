@@ -1,0 +1,22 @@
+@use 'colors' as *;
+@use "sass:math";
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 18) {
+	@return (math.div($pixels, $context)) * 1rem;
+}
+
+@function rem($pixels, $context: 18) {
+	@return (math.div($pixels, $context)) * 1rem;
+}
+
+// loop through colors
+@function clr($keys...) {
+    $value: $colors;
+
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+
+    @return $value;
+}

@@ -1,0 +1,67 @@
+@use '../base' as *;
+@use '../util' as *;
+
+.header {
+    padding-block: rem(26);
+    padding-inline: rem(16);
+
+    margin-bottom: rem(90);
+
+    @include breakpoint(medium) {
+        padding-block: rem(55);
+        padding-inline: rem(75);
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    &__logo {
+
+        img {
+            width: rem(106);
+            height: rem(18);
+
+            @include breakpoint(medium) {
+                width: rem(250);
+                height: rem(40);
+            }
+        }
+    }
+
+    &__cta {
+        font-size: rem(12);
+        font-weight: $f-semibold;
+        
+        width: rem(115);
+
+        border: 1px solid clr(primary, pink);
+        border-radius: rem(100);
+        background-color: white;
+        color: clr(primary, pink);
+
+        padding: rem(8);
+
+        transition: color 350ms ease-in-out;
+        
+        &:hover {
+            cursor: pointer;
+            color: clr(neutral, white);
+            background-color: clr(primary, pink);
+            
+            transition: all 250ms;
+        }
+        
+        &:active {
+            transform: scale(0.95);
+        }
+        
+        @include breakpoint(medium) {
+            font-size: rem(16);
+
+            width: rem(190);
+
+            padding: em(16);
+        }
+    }
+}

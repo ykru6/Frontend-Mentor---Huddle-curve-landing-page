@@ -1,0 +1,18 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.component {
+    flex-flow: column nowrap;
+    
+    margin-block: rem(300);
+
+    &__heading {
+        font-size: min(max(1.52rem, 4vw), 3.25rem);
+
+        text-align: center;
+        
+        margin-bottom: rem(50);
+    }
+}
+
+

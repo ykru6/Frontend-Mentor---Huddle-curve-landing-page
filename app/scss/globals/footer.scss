@@ -1,0 +1,197 @@
+@use '../base' as *;
+@use '../util' as *;
+
+.footer {
+    background-color: clr(neutral, darker-cyan);
+    color: clr(neutral, white);
+
+    // padding-bottom: rem(100);
+
+    &__content {
+        flex-flow: column nowrap;
+        justify-content: center;
+        
+        width: 80%;
+        max-width: 1440px;
+        
+        margin: 0 auto;
+        padding: calc(2rem + 4vw) 0;
+        
+        @include breakpoint(medium) {
+            flex-flow: row-reverse nowrap;
+            gap: 4rem;
+            
+            padding-block: rem(50);
+        }
+    }
+
+    &__news {
+        flex-flow: column nowrap;
+    }
+
+    &__heading {
+        font-size: min(max(1.5rem, 3vw), 2.75rem);
+        font-weight: $f-semibold;
+        text-transform: uppercase;
+
+        margin-bottom: rem(22);
+    }
+    
+    &__text {
+        font-size: rem(16);
+        
+        margin-bottom: rem(32);
+    }
+
+    &__fill-out {
+
+        form {
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+
+            @include breakpoint(medium) {
+                flex-flow: row nowrap;
+                gap: rem(16);
+            }
+
+            // the element selector of .footer__input
+            input {
+                font-size: 1rem;
+
+                width: 100%;
+                height: rem(50);
+
+                margin-bottom: 1rem;
+                padding-left: 1rem;
+
+                border: none;
+                border-radius: 4px;
+                color: gray;
+                
+                &::placeholder {
+                    font-size: rem(14);
+                }
+
+                @include breakpoint(medium) {
+                    margin-bottom: 0;
+                }
+            }
+
+            // the element selector of .footer__cta
+            button {
+                align-self: flex-end;
+
+                font-size: rem(14);
+                font-weight: $f-semibold;
+
+                width: 50%;
+                height: rem(50);
+
+                border: 0 solid none;
+                border-radius: rem(4);
+                background-color: clr(primary, pink);
+
+                color: clr(neutral, white);
+
+                transition: all 250ms;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $ctaHover;
+
+                }
+            
+                &:active {
+                    transform: scale(0.95);
+                }
+            
+            }
+        }
+    }
+
+    &__container {
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        margin-top: rem(100);
+
+        @include breakpoint(medium) {
+            margin-top: 0;
+        }
+    }
+
+    &__logo {
+        display: block;
+
+        path {
+            fill: clr(neutral, white);
+        }
+
+        @include breakpoint(medium) {
+            margin-bottom: rem(45);
+        }
+    }
+
+    &__bt {
+        font-size: rem(16);
+
+        margin-top: rem(30);
+
+        @include breakpoint(medium) {
+            margin-top: 0;
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__contact {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        gap: rem(10);
+
+        padding: 0;
+        margin-top: rem(40);
+        margin-bottom: rem(60);
+
+        p {
+            font-size: rem(16);
+        }
+
+        p, img {
+            display: inline;
+        }
+
+        img {
+            margin-right: rem(25);
+        }
+
+        @include breakpoint(medium) {
+            flex: 1 1 33%;
+
+            margin: 0;
+        }
+    }
+
+    &__socials {
+        gap: 2rem;
+        
+        margin-block: rem(22);
+
+        i {
+            font-size: 2rem;
+
+            transition: all 350ms ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+
+                color: clr(primary, pink);
+            }
+        }
+
+        @include breakpoint(medium) {
+            flex: 1 1 33%;
+            
+            margin-top: rem(30);
+        }
+    }
+}
